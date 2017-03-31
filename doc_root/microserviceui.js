@@ -1,9 +1,9 @@
 // JAVASCRIPT DOCUMENT
 /*********************************************************    
-CHANGE THE URLS BELOW FOR THE WORKSHOP - THESE URLS MUST POINT TO THE MICROSERVICES      
+CHANGE THE URLS BELOW FOR THE WORKSHOP - THESE URLS MUST POINT TO THE MICROSERVICES.      
 *********************************************************/ 
-var dbServiceURL = "http://localhost:8002";
-var tweetServiceBaseURL = "http://localhost:8003";
+var dbServiceURL = "http://localhost:8002"; // THIS URL IS FOR THE CLIENT TEST ONLY. REPLACE THIS WITH THE MYSQL APPLICATION CLOUD CONTAINER URL TO RUN IN THE CLOUD.
+var tweetServiceBaseURL = "http://localhost:8003"; // THIS URL IS FOR THE CLIENT TEST ONLY. REPLACE THIS WITH THE TWITTER APPLICATION CLOUD CONTAINER URL TO RUN IN THE CLOUD.
 /*********************************************************    
 CHANGE THE URLS ABOVE FOR THE WORKSHOP.    
 *********************************************************/ 
@@ -20,7 +20,7 @@ function initiateDoc() {
 
 // CALL A REMOTE REST MICROSERVIVE.        
 function getServiceJSON(pathParm, serviceParm) {
-    if ((serviceParm == "twitter")&&!(twitterFeedFound)) {
+    if ((serviceParm == "twitter")&&(!twitterFeedFound)) {
         showNoTwitterFeed();
     }
     var xmlhttp = new XMLHttpRequest();
@@ -47,7 +47,7 @@ function createProductDiv() {
     /*********************************************************    
     UNCOMMENT THE SECTION BELOW FOR THE WORKSHOP - THIS SECTION PARSES AND DISPLAYS DATA FROM THE DATABASE MICROSERVICE.      
     *********************************************************/      
-    
+    /*
     stringVar = startVar;
     for (var i in jsonObj.products) {
             stringVar = stringVar + "<tr><td class='categoryClass'><a href='#' onclick='callTwitter(\"" +  jsonObj.products[i].twitterTag  +  
@@ -57,7 +57,7 @@ function createProductDiv() {
                 jsonObj.products[i].twitterTag + "</td></tr>";            
     }      
     stringVar = stringVar + "</table>"  
-    
+    */
     /*********************************************************    
     UNCOMMENT THE SECTION ABOVE FOR THE WORKSHOP     
     *********************************************************/                  
@@ -121,7 +121,7 @@ function hideTwitterDiv() {
     document.getElementById("instructionLabel").style.visibility = "visible";    
 }
 
-// SHOW THE INTERNAL DIV AND HIDE ALL ELSE.
+// SHOW THE INTERNAL DIV AND HIDE ALL ELSE.  DISPLAY THE INITIAL MESSAGE.
 function initialMessage() {
     document.getElementById("twitterHolderDiv").style.visibility = "hidden";
     document.getElementById("twitterDiv").style.visibility = "visible";    
