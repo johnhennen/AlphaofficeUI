@@ -50,4 +50,4 @@ http.createServer(function(request, response) {
         response.end(fullVar, 'utf-8');
     }			
 			
-}).listen(8001);
+}).listen(process.env.PORT || 8001);
